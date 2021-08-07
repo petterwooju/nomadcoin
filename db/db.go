@@ -37,7 +37,7 @@ func Close() {
 }
 
 func SaveBlock(hash string, data []byte) {
-	fmt.Printf("Saving Block %s \n Data: %b ", hash, data)
+	fmt.Printf("Saving Block %s\nData: %b ", hash, data)
 	err := DB().Update(func(t *bolt.Tx) error {
 		bucket := t.Bucket([]byte(blocskBucket))
 		err := bucket.Put([]byte(hash), data)
