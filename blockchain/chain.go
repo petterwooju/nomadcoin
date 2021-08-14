@@ -104,11 +104,11 @@ func (b *blockchain) TxOutsByAddress(address string) []*TxOut {
 
 func (b *blockchain) BalanceByAddress(address string) int {
 	txOuts := b.TxOutsByAddress(address)
-	var amouts int
+	var amounts int
 	for _, txOut := range txOuts {
-		amouts += txOut.Amout
+		amounts += txOut.Amount
 	}
-	return amouts
+	return amounts
 }
 
 func Blockchain() *blockchain {
